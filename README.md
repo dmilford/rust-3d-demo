@@ -25,6 +25,8 @@
             - This will download all your Rust crates and make sure your Rust can build.  May take a minute.
         npm install
             - This will download all you node packages.  May take a minute.
+        rustup target add wasm32-unknown-unknown
+            - This will make sure you have wasm as a target for Rust
 
 # Running
     In your command line terminal, type...
