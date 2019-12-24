@@ -4,16 +4,19 @@
 # Prerequisites
   Rustup: 
     I'm using version 1.19.0.  If you have trouble, you might want to peg your verions to that.
+    To check what version you have, you can type 'rustup --version' in a command line terminal.
     If you need help getting this set up, I have a youtube tutorial at https://youtu.be/f6tizikEMTk
   NPM: 
     I'm using version 6.4.1.  If you have trouble, you might want to peg your version to that.
+    To check what version you have, you can type 'npm --v' in a command line terminal.
     To get NPM and Node, go to https://www.npmjs.com/get-npm
   Node: 
     I'm using version v10.13.0.  If you have trouble, you might want to peg your version to that.
+    To check what version you have, you can type 'node --v' in a command line terminal.
     Node will automatically be installed if you install npm.
   Visual Studio Code: 
     To install, go to https://code.visualstudio.com/
-    The is the dev environment I use, but of course you can use your favorite.
+    This is the dev environment I use, but of course you can use your favorite.
     If you need help getting this environment set up, I have a youtube tutorial at https://youtu.be/f6tizikEMTk
 
 # Initialization
