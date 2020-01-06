@@ -143,6 +143,8 @@ impl Graph3D {
             GL::DYNAMIC_DRAW,
         );
 
+        gl.bind_buffer(GL::ELEMENT_ARRAY_BUFFER, Some(&self.indices_buffer));
+
         gl.draw_elements_with_i32(GL::TRIANGLES, self.index_count, GL::UNSIGNED_SHORT, 0);
     }
 }

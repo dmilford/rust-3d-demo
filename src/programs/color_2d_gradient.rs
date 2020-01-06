@@ -8,6 +8,7 @@ use super::super::common_funcs as cf;
 pub struct Color2DGradient {
     program: WebGlProgram,
     color_buffer: WebGlBuffer,
+    index_buffer: WebGlBuffer,
     index_count: i32,
     rect_vertice_buffer: WebGlBuffer,
     u_opacity: WebGlUniformLocation,
@@ -64,6 +65,7 @@ impl Color2DGradient {
 
         Self {
             color_buffer: gl.create_buffer().ok_or("failed to create buffer").unwrap(),
+            index_buffer: buffer_indices,
             index_count: indices_array.length() as i32,
             u_opacity: gl.get_uniform_location(&program, "uOpacity").unwrap(),
             u_transform: gl.get_uniform_location(&program, "uTransform").unwrap(),
@@ -124,6 +126,8 @@ impl Color2DGradient {
 
         let transform_mat = cf::mult_matrix_4(scale_mat, translation_mat);
         gl.uniform_matrix4fv_with_f32_array(Some(&self.u_transform), false, &transform_mat);
+
+        gl.bind_buffer(GL::ELEMENT_ARRAY_BUFFER, Some(&self.index_buffer));
 
         gl.draw_elements_with_i32(GL::TRIANGLES, self.index_count, GL::UNSIGNED_SHORT, 0);
     }
