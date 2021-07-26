@@ -15,8 +15,8 @@
     In your command line terminal, type...
         rustup target add wasm32-unknown-unknown
             - This will make sure you have wasm as a target for Rust
-	cargo build --target wasm32-unknown-unknown
-	    - This creates a wasm build in ./target
+        cargo build --target wasm32-unknown-unknown
+            - This creates a wasm build in ./target
         wasm-bindgen --out-dir . --target web --reference-types --no-typescript --omit-default-module-path target/wasm32-unknown-unknown/debug/rust_3d_demo.wasm
             - This will write out the JavaScript web binding to the current directlry
 
