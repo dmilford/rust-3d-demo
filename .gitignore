@@ -1,6 +1,4 @@
 Cargo.lock
-dist
-node_modules
-package-lock.json
-pkg
 target
+rust_3d_demo.js
+rust_3d_demo_bg.wasm

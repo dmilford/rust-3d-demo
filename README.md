@@ -6,14 +6,6 @@
     I'm using version 1.19.0.  If you have trouble, you might want to peg your verions to that.
     To check what version you have, you can type 'rustup --version' in a command line terminal.
     If you need help getting this set up, I have a youtube tutorial at https://youtu.be/f6tizikEMTk
-  NPM: 
-    I'm using version 6.4.1.  If you have trouble, you might want to peg your version to that.
-    To check what version you have, you can type 'npm --v' in a command line terminal.
-    To get NPM and Node, go to https://www.npmjs.com/get-npm
-  Node: 
-    I'm using version v10.13.0.  If you have trouble, you might want to peg your version to that.
-    To check what version you have, you can type 'node --v' in a command line terminal.
-    Node will automatically be installed if you install npm.
   Visual Studio Code: 
     To install, go to https://code.visualstudio.com/
     This is the dev environment I use, but of course you can use your favorite.
@@ -23,16 +15,10 @@
     In your command line terminal, type...
         rustup target add wasm32-unknown-unknown
             - This will make sure you have wasm as a target for Rust
-        cargo build
-            - This will download all your Rust crates and make sure your Rust can build.  May take a minute.
-        npm install
-            - This will download all you node packages.  May take a minute.
+        cargo build --target wasm32-unknown-unknown
+            - This creates a wasm build in ./target
+        wasm-bindgen --out-dir . --target web --reference-types --no-typescript --omit-default-module-path target/wasm32-unknown-unknown/debug/rust_3d_demo.wasm
+            - This will write out the JavaScript web binding to the current directlry
 
 # Running
-    In your command line terminal, type...
-        npm run dev
-
-    - NOTE: The first time you run this is may take a minute to start.  After that, is should take just a few seconds.
-    - Live Reloading is enabled.  As you make Rust code changes and press "Save", the browser will automatically reload with the new code.
-
-
+    Serve the repo root with your web server and navigate to `/` in your web browser.
